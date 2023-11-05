@@ -26,7 +26,9 @@ clearBtn.addEventListener('click', e => {
 });
 
 exportBtn.addEventListener('click', e => {
-    let img = canvas.toDataURL("image/webp", 0.1)
+    console.log("export")
+    let sticky_data = canvas.toDataURL("image/png", 1);
+    console.log(sticky_data)
 });
 
 loadBtn.addEventListener('click', e => {
