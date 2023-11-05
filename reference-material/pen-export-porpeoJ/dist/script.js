@@ -5,13 +5,18 @@ const ctx = canvas.getContext('2d');
 const canvasOffsetX = canvas.offsetLeft;
 const canvasOffsetY = canvas.offsetTop;
 
-canvas.width = window.innerWidth - canvasOffsetX;
-canvas.height = window.innerHeight - canvasOffsetY;
+// canvas.width = window.innerWidth - canvasOffsetX;
+// canvas.height = window.innerHeight - canvasOffsetY;
+
+canvas.width = 400;
+canvas.height = 400;
 
 let isPainting = false;
 let lineWidth = 5;
 let startX;
 let startY;
+
+ctx.fillStyle = '#ffe599';
 
 // toolbar.addEventListener('click', e => {
 //     if (e.target.id === 'clear') {
