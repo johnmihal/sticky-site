@@ -1,5 +1,8 @@
 const canvas = document.getElementById('drawing-board');
-// const toolbar = document.getElementById('toolbar');
+const clearBtn = document.getElementById('clearBtn');
+const exportBtn = document.getElementById('exportBtn');
+const loadBtn = document.getElementById('loadBtn');
+
 const ctx = canvas.getContext('2d');
 
 const canvasOffsetX = canvas.offsetLeft;
@@ -18,22 +21,18 @@ let startY;
 
 ctx.fillStyle = '#ffe599';
 
-// toolbar.addEventListener('click', e => {
-//     if (e.target.id === 'clear') {
-//         ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     }
-// });
+clearBtn.addEventListener('click', e => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
 
-// toolbar.addEventListener('change', e => {
-//     if(e.target.id === 'stroke') {
-//         ctx.strokeStyle = e.target.value;
-//     }
+exportBtn.addEventListener('click', e => {
+    let img = canvas.toDataURL("image/webp", 0.1)
+});
 
-//     if(e.target.id === 'lineWidth') {
-//         lineWidth = e.target.value;
-//     }
-    
-// });
+loadBtn.addEventListener('click', e => {
+    alert("not implemented");
+});
+
 
 const draw = (e) => {
     if(!isPainting) {

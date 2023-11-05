@@ -1,0 +1,16 @@
+*{
+    outline: hotpink solid 1px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+canvas{
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: antiquewhite;
+}
+
