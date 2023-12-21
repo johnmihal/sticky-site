@@ -4,13 +4,38 @@
 
 body {
     margin: 0;
+    margin-left: 40px;
     padding: 0;
     height: 100vh;
+    background-color: azure;
 }
 
 canvas{
-    margin-top: 20px;
-    margin-left: 20px;
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    height: 500px;
+    width: 500px;
     background-color: antiquewhite;
+}
+
+#draw-sticky{
+    width: 500px;
+    background-color: aqua;
+    position: relative;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#clearBtn{
+    margin: 10px;
+    /* position: block; */
+;}
+
+#saveBtn{
+    /* position: absolute; */
+    margin: 10px;
 }
 

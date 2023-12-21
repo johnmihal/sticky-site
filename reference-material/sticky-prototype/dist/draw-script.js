@@ -5,14 +5,16 @@ const loadBtn = document.getElementById('loadBtn');
 
 const ctx = canvas.getContext('2d');
 
-const canvasOffsetX = canvas.offsetLeft;
-const canvasOffsetY = canvas.offsetTop;
+const canvasOffsetX = canvas.getBoundingClientRect()["x"];
+const canvasOffsetY = canvas.getBoundingClientRect()["y"];
+
+console.log(canvasOffsetX);
 
 // canvas.width = window.innerWidth - canvasOffsetX;
 // canvas.height = window.innerHeight - canvasOffsetY;
 
-canvas.width = 400;
-canvas.height = 400;
+canvas.width = 500;
+canvas.height = 500;
 
 let isPainting = false;
 let lineWidth = 5;
@@ -25,15 +27,15 @@ clearBtn.addEventListener('click', e => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
-exportBtn.addEventListener('click', e => {
-    console.log("export")
+saveBtn.addEventListener('click', e => {
+    console.log("save")
     let sticky_data = canvas.toDataURL("image/png", 1);
     console.log(sticky_data)
 });
 
-loadBtn.addEventListener('click', e => {
-    alert("not implemented");
-});
+// loadBtn.addEventListener('click', e => {
+//     alert("not implemented");
+// });
 
 
 const draw = (e) => {
@@ -44,7 +46,7 @@ const draw = (e) => {
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
 
-    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
+    ctx.lineTo(e.clientX-canvasOffsetX , e.clientY-canvasOffsetY);
     ctx.stroke();
 }
 

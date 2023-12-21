@@ -7,7 +7,6 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,13 +16,21 @@
     <title>Drawing app</title>
 </head>
 <body>
-    <canvas id="drawing-board"></canvas>
-    <button id="clearBtn">Clear</button>
-    <button id="exportBtn">Export</button>
-    <button id="loadBtn">Load</button>
 
+    <h1>Draw Sticky Prototype</h1>
+    <div id="draw-sticky">
+      <canvas id="drawing-board"></canvas>
+      <div class="buttons">
+        <button id="saveBtn">Save</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+    </div>
+
+    <h1>View Sticky Prototype</h1>
+    <img class="view-sticky" id="imgElem"></img>
 </body>
 </html>
-  <script  src="script.js"></script>
+  <script  src="draw-script.js"></script>
+  <script  src="view-script.js"></script>
 </body>
 </html>
