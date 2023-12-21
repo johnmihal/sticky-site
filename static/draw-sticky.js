@@ -31,6 +31,19 @@ saveBtn.addEventListener('click', e => {
     console.log("save")
     let sticky_data = canvas.toDataURL("image/png", 1);
     console.log(sticky_data)
+
+
+    fetch("/", {
+    method: "POST",
+    body: JSON.stringify({
+        img: sticky_data
+    }),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+    })
+    .then((response) => console.log(response)); //response.json())
+    // .then((json) => console.log(json));
 });
 
 // loadBtn.addEventListener('click', e => {

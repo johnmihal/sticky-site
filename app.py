@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/",methods=['GET'])
 def home():
     client = MongoClient("url goes here")
     db = client.test_database
@@ -12,6 +12,7 @@ def home():
 
     return render_template("index.html")
 
-@app.route('//post',methods=['POST'])
+@app.route('/',methods=['POST'])
 def post():
+    print("i recived a post request!")
     return render_template("index.html")
