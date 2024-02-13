@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request, jsonify
 from pymongo import MongoClient
-import secrets
+import secrets_1
+import datetime
 
 app = Flask(__name__)
 client = MongoClient(secrets_1.mongodblink)
@@ -9,9 +10,7 @@ collection = db.CoolCollectionName
 
 @app.route("/",methods=['GET'])
 def home():
-    client = MongoClient(secrets.mongodblink)
-    db = client.CoolDatabaseName
-    collection = db.CoolCollectionName
+
 
 
     return render_template("index.html")
@@ -19,7 +18,6 @@ def home():
 @app.route('/',methods=['POST'])
 def post():
     print("i recived a post request!")
-    
     content = request.json
     content["date"] = datetime.datetime.now(tz=datetime.timezone.utc)
     print(content)
