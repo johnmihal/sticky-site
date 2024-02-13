@@ -1,13 +1,15 @@
 from flask import Flask, render_template, redirect, url_for
 from pymongo import MongoClient
+import secrets
 
 app = Flask(__name__)
 
+
 @app.route("/",methods=['GET'])
 def home():
-    client = MongoClient("url goes here")
-    db = client.test_database
-    collection = db.test_collection
+    client = MongoClient(secrets.mongodblink)
+    db = client.CoolDatabaseName
+    collection = db.CoolCollectionName
 
 
     return render_template("index.html")
