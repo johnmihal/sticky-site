@@ -7,13 +7,16 @@ app = Flask(__name__)
 client = MongoClient(secrets_1.mongodblink)
 db = client.CoolDatabaseName
 collection = db.CoolCollectionName
+placeholder_img = "static/sticky.jpg"
 
 @app.route("/",methods=['GET'])
 def home():
+    print("get recieved!")
+
+    print(collection.count_documents({}))
 
 
-
-    return render_template("index.html")
+    return render_template("index.html", )
 
 @app.route('/',methods=['POST'])
 def post():
