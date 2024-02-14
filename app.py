@@ -14,9 +14,12 @@ def home():
     print("get recieved!")
 
     print(collection.count_documents({}))
+    obj = collection.find()
+    print(obj[2])
 
 
-    return render_template("index.html", )
+
+    return render_template("index.html", img = obj[2]["img"])
 
 @app.route('/',methods=['POST'])
 def post():
