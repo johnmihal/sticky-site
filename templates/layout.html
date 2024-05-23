@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <head>
     <title>Sticky Site</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='src/output.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='sticky.css')}}">
 
 </head>
 <body>
-    <h1>Welcome to Sticky Site!</h1>
+    <h1 class="font-mono text-xl text-center">Welcome to Sticky Site!</h1>
     {% block content %}
     {% endblock %}
 </body>

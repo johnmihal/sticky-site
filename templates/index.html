@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
     {% block content %}
-    <p>Write a sticky!</p>
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="grid grid-cols-3 grid-rows-3 gap-4">
+    <p class="font-serif text-lg text-center">Write a sticky!</p>
+    <div class="">
+        <div class="columns-3">
             <div id="draw-sticky">
                 <canvas id="drawing-board"></canvas>
                 <div class="buttons">
@@ -10,12 +10,9 @@
                   <button id="clearBtn">Clear</button>
                 </div>
               </div>
-            <div><img src="{{ img }}" alt="sticky"></div>
-            <div><img src="static/sticky.jpg" alt="sticky"></div>
-            <div><img src="static/sticky.jpg" alt="sticky"></div>
-            <div><img src="static/sticky.jpg" alt="sticky"></div>
-            <div><img src="static/sticky.jpg" alt="sticky"></div>
-            <div><img src="static/sticky.jpg" alt="sticky"></div>
+            {%- for im in img_list %}
+              <div><img src="{{ im }}" alt="sticky"></div>
+            {% endfor%}
         </div>
     </div>
 {% endblock %}

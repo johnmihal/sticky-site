@@ -15,19 +15,24 @@ def home():
 
     print(collection.count_documents({}))
     obj = collection.find()
-    print(obj[2])
 
+    im_list = []
 
+    for x in obj:
+        # print(x)
+        im_list.append(x["img"])
 
-    return render_template("index.html", img = obj[2]["img"])
+    print(im_list)
+
+    return render_template("index.html", img_list = im_list)
 
 @app.route('/',methods=['POST'])
 def post():
     print("i recived a post request!")
     content = request.json
     content["date"] = datetime.datetime.now(tz=datetime.timezone.utc)
-    print(content)
+    # print(content)
 
     img_obj = collection.insert_one(content).inserted_id
-    print(img_obj)
+    # print(img_obj)
     return render_template("index.html")

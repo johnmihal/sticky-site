@@ -1,4 +1,6 @@
-
+*{
+    outline: hotpink solid 1px;
+}
 
 canvas{
     /* margin-top: 20px;
