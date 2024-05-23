@@ -9,6 +9,8 @@
 Welcome to Sticky Site! Sticky Site is a public sticky note board, all can add sticky notes and all can see them. 
 
 ## Running the Code <a name="2"></a>
+Activate the python virtual environemnt with `source .venv/bin/activate`.
+Then run `flask run`.
 
 ## Project Architecture <a name="3"></a>
 This is a web app that uses Flask. Flask runs on the server and is connected to a MongoDB database which stores the stickies. The Flask server handled the get and post of the sticky notes.
